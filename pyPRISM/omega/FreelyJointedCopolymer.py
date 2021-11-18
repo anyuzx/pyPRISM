@@ -53,13 +53,13 @@ class FreelyJointedCopolymer(Omega):
             index = np.where(self.sequence == self.pair1)[0]
             index_num = index.shape[0]
             
-            omega_pair = np.sum(np.power((np.sin(k * l) / (k * l))[:, np.newaxis, np.newaxis], np.abs(index[:, np.newaxis] - index)[np.newaxis,:]), axis=(1,2)) / (index_num)
+            self.value = np.sum(np.power((np.sin(k * l) / (k * l))[:, np.newaxis, np.newaxis], np.abs(index[:, np.newaxis] - index)[np.newaxis,:]), axis=(1,2)) / (index_num)
         else:
             index_1 = np.where(self.sequence == self.pair1)[0]
             index_2 = np.where(self.sequence == self.pair2)[0]
             
             index_1_num = index_1.shape[0]
             index_2_num = index_2.shape[0]
-            omega_pair = np.sum(np.power((np.sin(k * l) / (k * l))[:, np.newaxis, np.newaxis], np.abs(index_1[:, np.newaxis] - index_2)[np.newaxis,:]), axis=(1,2)) / (index_1_num + index_2_num)
+            self.value = np.sum(np.power((np.sin(k * l) / (k * l))[:, np.newaxis, np.newaxis], np.abs(index_1[:, np.newaxis] - index_2)[np.newaxis,:]), axis=(1,2)) / (index_1_num + index_2_num)
         
-        return omega_pair
+        return self.value
