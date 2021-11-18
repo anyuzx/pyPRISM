@@ -88,7 +88,7 @@ class SquareWell(Potential):
         self.high_value = high_value
         self.funk  = lambda r,sigma: - epsilon
     def __repr__(self):
-        return '<Potential: Exponential>'
+        return '<Potential: SquareWell>'
     
     def calculate(self,r):
         r'''Calculate the value of the potential

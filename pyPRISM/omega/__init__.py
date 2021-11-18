@@ -44,3 +44,5 @@ from pyPRISM.omega.FreelyJointedChain import FJC
 from pyPRISM.omega.NonOverlappingFreelyJointedChain import NonOverlappingFreelyJointedChain
 from pyPRISM.omega.NonOverlappingFreelyJointedChain import NFJC
 
+from pyPRISM.omega.FreelyJointedCopolymer import FreelyJointedCopolymer
+

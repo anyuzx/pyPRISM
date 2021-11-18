@@ -13,4 +13,5 @@ from pyPRISM.potential.HardSphere import HardSphere
 from pyPRISM.potential.LennardJones import LennardJones
 from pyPRISM.potential.HardCoreLennardJones import HardCoreLennardJones
 from pyPRISM.potential.WeeksChandlerAndersen import WeeksChandlerAndersen
+from pyPRISM.potential.SquareWell import SquareWell
 
