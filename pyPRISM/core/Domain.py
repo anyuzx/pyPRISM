@@ -95,7 +95,9 @@ class Domain(object):
     
     def build_grid(self):
         '''Construct the Real and Fourier Space grids and transform coefficients'''
-        self.r = np.arange(self._dr,self._dr*(self._length+1),self._dr)
+        
+        # note that the r grid points start from half of dr, not from dr. This improve the accuracy of the discrete sine transform
+        self.r = np.arange(.5 * self._dr, self._dr * (self.length + .5), self._dr)
         self.k = np.arange(self.dk,self.dk*(self._length+1),self.dk)
         self.DST_II_coeffs = 2.0*np.pi *self.r*self._dr 
         self.DST_III_coeffs = self.k * self.dk/(4.0*np.pi*np.pi)
