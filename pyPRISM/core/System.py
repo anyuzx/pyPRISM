@@ -134,7 +134,7 @@ class System:
         tol = 1e-6
         # ensure that the diameters are on the real-space grid
         for i,t,d in self.diameter.diameter:
-            check = np.any(np.abs(self.domain.r - d)<tol)
+            check = np.any(np.abs(int(d /self.domain._dr) - d / self.domain._dr) < tol)
             if not check:
                 warn_text  = 'Diameter for site {} = {} is not a multiple '.format(t,d)
                 warn_text += 'of domain grid spacing dr = {}. '.format(self.domain.dr)
@@ -143,7 +143,7 @@ class System:
 
         # ensure that the sigmas are on the real-space grid
         for i,(t1,t2),s in self.diameter.sigma:
-            check = np.any(np.abs(self.domain.r - s)<tol)
+            check = np.any(np.abs(int(d /self.domain._dr) - d / self.domain._dr) < tol)
             if not check:
                 warn_text  = 'Sigma for pair {}-{} = {} is not a multiple '.format(t1,t2,s)
                 warn_text += 'of domain grid spacing dr = {}. '.format(self.domain.dr)
