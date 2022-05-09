@@ -1,3 +1,5 @@
+This repo includes some custom modification on original pyPRISM package.
+
 <p align="center">
     <img src='./tutorial/img/TOC.svg' width='500px'/>
 </p>
